@@ -1,7 +1,16 @@
 
 var lat = new URL(location.href).searchParams.get("lat")
 var lng = new URL(location.href).searchParams.get("lng")
-/*
+
+var currentDt = new Date();
+    var mm = currentDt.getMonth() + 1;
+    var dd = currentDt.getDate();
+    var yyyy = currentDt.getFullYear();
+    var s = currentDt.getSeconds();
+    var m = currentDt.getMinutes();
+    var h = currentDt.getHours();
+const image_name = mm + '-' + dd + '-' + yyyy+"-"+h+"-"+m+"-"+s;
+
  var config = {
     apiKey: "AIzaSyCyvi6yqyI3oelwckdP4DLW97RAwruN-ic",
     authDomain: "storymap-da000.firebaseapp.com",
@@ -12,15 +21,6 @@ var lng = new URL(location.href).searchParams.get("lng")
   };
  firebase.initializeApp(config);
 
-  var ref = firebase.storage().ref();
-
-var fileButton = document.getElementById("pic");
-            fileButton.addEventListener('change', function(e){
-                var file = e.target.files[0];
-                var storageRef = firebase.storage().ref(file.name);
-                storageRef.put(file);
-});
-*/
 function WriteData(){
 var lat = new URL(location.href).searchParams.get("lat")
 var lng = new URL(location.href).searchParams.get("lng")
@@ -30,13 +30,12 @@ var lng = new URL(location.href).searchParams.get("lng")
 
 var title = document.getElementById("title").value
 var story = document.getElementById("story").value
-//var path = document.getElementById("pic").files[0].path; 
 
 
 
+window.open("success.html"+"?lat="+lat+"&lng="+lng+"&title="+title+"&story="+story+"&url="+image_name,'windowname', 'width=500, height=400')
 
-window.open("success.html"+"?lat="+lat+"&lng="+lng+"&title="+title+"&story="+story,'windowname', 'width=500, height=400')
-//window.location.href="success.html"+"?lat="+lat+"&lng="+lng+"&title="+title+"&story="+story;
-//window.open("success.html")
 
 }
+
+
