@@ -51,7 +51,8 @@ var coordinate = doc.data()
 
 
 map.on('click', function(e) {
-    alert(e.latlng.lat);
+window.open("input.html"+"?lat="+e.latlng.lat+"&lng="+e.latlng.lng,"_self")
+//    alert(e.latlng.lat);
 });
 
 }
