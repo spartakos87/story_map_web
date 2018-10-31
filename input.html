@@ -22,7 +22,32 @@ Story: <input type="text" name="story" id="story"><br>
 
 
 -
- <input  type="file" name="pic" id="pic"  accept="image/*" ><br>
+ <input  type="file" name="pic" id="fileButton"  accept="image/*" ><br>
+
+
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+            <script>
+            // Initialize Firebase
+           
+var config = {
+    apiKey: "AIzaSyCyvi6yqyI3oelwckdP4DLW97RAwruN-ic",
+    authDomain: "storymap-da000.firebaseapp.com",
+    databaseURL: "https://storymap-da000.firebaseio.com",
+    projectId: "storymap-da000",
+    storageBucket: "storymap-da000.appspot.com",
+    messagingSenderId: "443585925665"
+  };
+
+     firebase.initializeApp(config);
+           </script>
+           <script>
+              var fileButton = document.getElementById("fileButton");
+              fileButton.addEventListener('change', function(e){
+                  var file = e.target.files[0];
+                  var storageRef = firebase.storage().ref(file.name);
+                  storageRef.put(file);
+              });  
+           </script>
 
 <input onclick=WriteData() type="submit" value="Submit">
 </form>
