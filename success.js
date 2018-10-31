@@ -2,6 +2,7 @@ var lat = new URL(location.href).searchParams.get("lat")
 var lng = new URL(location.href).searchParams.get("lng")
 var title = new URL(location.href).searchParams.get("title")
 var story = new URL(location.href).searchParams.get("story")
+var url = new URL(location.href).searchParams.get("url")
   var config = {
     apiKey: "AIzaSyCyvi6yqyI3oelwckdP4DLW97RAwruN-ic",
     authDomain: "storymap-da000.firebaseapp.com",
@@ -17,7 +18,8 @@ database.collection("Stories").add({
 title:title,
 story:story,
 lat:lat,
-lng:lng
+lng:lng,
+url:url
 
 
 });
