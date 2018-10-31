@@ -1,5 +1,7 @@
+
 var lat = new URL(location.href).searchParams.get("lat")
 var lng = new URL(location.href).searchParams.get("lng")
+/*
  var config = {
     apiKey: "AIzaSyCyvi6yqyI3oelwckdP4DLW97RAwruN-ic",
     authDomain: "storymap-da000.firebaseapp.com",
@@ -11,11 +13,18 @@ var lng = new URL(location.href).searchParams.get("lng")
  firebase.initializeApp(config);
 
   var ref = firebase.storage().ref();
+
+var fileButton = document.getElementById("pic");
+            fileButton.addEventListener('change', function(e){
+                var file = e.target.files[0];
+                var storageRef = firebase.storage().ref(file.name);
+                storageRef.put(file);
+});
+*/
 function WriteData(){
-const file = document.querySelector('#pic').files[0];
-const name = (+new Date()) + '-' + file.name;
-const metadata = { contentType: file.type };
-const task = ref.child(name).put(file, metadata);
+var lat = new URL(location.href).searchParams.get("lat")
+var lng = new URL(location.href).searchParams.get("lng")
+//const name = (+new Date()) + '-' + file.name;
 
 
 
