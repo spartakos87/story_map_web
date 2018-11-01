@@ -36,11 +36,11 @@ var map = L.map('map').setView([lat,lon], 14);
 database.collection("Stories").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data().title);
+//        console.log(doc.id, " => ", doc.data().title);
 var coordinate = doc.data()
 
 
- L.marker([Number(coordinate.lat), Number(coordinate.lng)],{id:doc.id}).addTo(map);
+ L.marker([Number(coordinate.lat), Number(coordinate.lng)],{id:doc.id}).on('click',markerOnclick).addTo(map);
 
 })})
 
@@ -51,7 +51,8 @@ var coordinate = doc.data()
 
 
 map.on('click', function(e) {
-    alert(e.latlng.lat);
+window.open("input.html"+"?lat="+e.latlng.lat+"&lng="+e.latlng.lng,"_self")
+//    alert(e.latlng.lat);
 });
 
 }
@@ -62,8 +63,9 @@ console.log("Fail")
 
 }
 
+function markerOnclick(e){
 
-function test(){
-console.log("test")
+var doc_id = e.target.options.id
+window.open("viewinfo.html"+"?id="+doc_id,"_self")
+
 }
-
