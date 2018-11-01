@@ -38,4 +38,17 @@ window.open("success.html"+"?lat="+lat+"&lng="+lng+"&title="+title+"&story="+sto
 
 }
 
+window.addEventListener('load', function() {
 
+var fileButton = document.getElementById("fileButton");
+
+
+})
+
+
+fileButton.addEventListener('change', function(e){
+                var file = e.target.files[0];
+                var storageRef = firebase.storage().ref(image_name);
+               storageRef.put(file)
+
+});
