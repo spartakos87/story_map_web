@@ -1,4 +1,4 @@
-var file="empty"
+var file=""
 
 var currentDt = new Date();
     var mm = currentDt.getMonth() + 1;
@@ -43,7 +43,9 @@ var lng = new URL(location.href).searchParams.get("lng")
 var title = document.getElementById("title").value
 var story = document.getElementById("story").value
 
-
+if (title == "" || story == "" || file == ""){
+alert("Do not left any field empty")
+} else{
 var database = firebase.firestore()
 
 database.collection("Stories").add({
@@ -56,6 +58,7 @@ url:image_name});
 
                 var storageRef = firebase.storage().ref(image_name);
                storageRef.put(file)
+}
 }
 
 function goBack(){
