@@ -71,3 +71,9 @@ database.collection("Stories").doc(docId).delete().then(function() {
 
 
 }
+
+
+function goBack(){
+window.open("index.html","_self")
+
+}
