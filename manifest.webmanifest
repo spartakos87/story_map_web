@@ -1,0 +1,15 @@
+{
+    "name": "Share Your Stories",
+    "short_name" : "SYS",
+    "start_url": "https://spartakos87.github.io/story_map_web/",
+    "icons": [
+        {
+            "src": "icons/icon.png",
+            "sizes": "225x225",
+            "type": "image/png"
+        },
+    ],
+    "theme_color": "#ffee00",
+    "background_color": "#ffee00",
+    "display": "standalone"
+}
