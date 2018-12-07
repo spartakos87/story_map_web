@@ -1,12 +1,11 @@
 {
-    "name": "My PWA Sample App",
-    "short_name" : "PWA",
+    "name": "Share Your Stories",
+    "short_name" : "SYS",
     "start_url": "https://spartakos87.github.io/story_map_web/",
-    "scope" : "./",
     "icons": [
         {
-            "src": "icon.png",
-            "sizes": "192x192",
+            "src": "icons/icon.png",
+            "sizes": "225x225",
             "type": "image/png"
         },
     ],
