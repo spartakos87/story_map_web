@@ -16,7 +16,7 @@ docRef.get().then(function(doc) {
         console.log("Document data:", doc.data());
         const data = doc.data();
 
-document.getElementById("docId").value = docId;
+//document.getElementById("docId").value = docId;
 document.getElementById("title").value = data.title;
 document.getElementById("story").value = data.story;
 console.log("url===> "+data.url)
@@ -27,7 +27,6 @@ var image = images.child(data.url)
 image.getDownloadURL().then((url) => {
 
 
-document.getElementById("url").value = url;
 document.getElementById("myImage").src = url;
 
 
@@ -70,5 +69,11 @@ database.collection("Stories").doc(docId).delete().then(function() {
 
 
 
+
+}
+
+
+function goBack(){
+window.open("index.html","_self")
 
 }

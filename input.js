@@ -1,6 +1,4 @@
-
-var lat = new URL(location.href).searchParams.get("lat")
-var lng = new URL(location.href).searchParams.get("lng")
+var file=""
 
 var currentDt = new Date();
     var mm = currentDt.getMonth() + 1;
@@ -21,21 +19,49 @@ const image_name = mm + '-' + dd + '-' + yyyy+"-"+h+"-"+m+"-"+s;
   };
  firebase.initializeApp(config);
 
-function WriteData(){
+window.addEventListener('load', function() {
+
+const fileButton = document.getElementById("fileButton");
+const up = document.getElementById("up")
+
+
+});
+
+fileButton.addEventListener('change', function(e){
+                 file = e.target.files[0];
+
+});
+const myform = document.querySelector('form');
+myform.addEventListener('submit', myFun);
+
+
+function myFun(e){
+ e.preventDefault();
+
 var lat = new URL(location.href).searchParams.get("lat")
 var lng = new URL(location.href).searchParams.get("lng")
-//const name = (+new Date()) + '-' + file.name;
-
-
-
 var title = document.getElementById("title").value
 var story = document.getElementById("story").value
 
+if (title == "" || story == "" || file == ""){
+alert("Do not left any field empty")
+} else{
+var database = firebase.firestore()
+
+database.collection("Stories").add({
+title:title,
+story:story,
+lat: lat,
+lng:lng,
+url:image_name});
 
 
-window.open("success.html"+"?lat="+lat+"&lng="+lng+"&title="+title+"&story="+story+"&url="+image_name,'windowname', 'width=500, height=400')
-
-
+                var storageRef = firebase.storage().ref(image_name);
+               storageRef.put(file)
+}
 }
 
+function goBack(){
 
+window.open("index.html","_self")
+}
