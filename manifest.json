@@ -1,0 +1,23 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "MyPWA",
+    "scope": "/story_map_web/",
+    "display": "browser",
+    "start_url": "https://spartakos87.github.io/story_map_web/",
+    "short_name": "My PWA site",
+    "theme_color": "transparent",
+    "description": "PWA for GE2 for SDY60",
+    "orientation": "any",
+    "background_color": "pick",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+{
+            "src": "icons/icon.png",
+            "sizes": "225x225",
+            "type": "image/png"
+        }:wq
+
+]
+}
